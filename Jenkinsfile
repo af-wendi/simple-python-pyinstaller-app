@@ -13,7 +13,7 @@ node {
             // Menggunakan Docker image pytest untuk Test
             docker.image('qnib/pytest').inside {
                 // Langkah-langkah untuk Test
-                sh 'py.test --junit-xml test-reports/results.xml sources/test_calc.py'
+                sh 'py.test --junit-xml test-reports/resultss.xml sources/test_calc.py'
             }
         }
     } catch (Exception e) {
@@ -21,6 +21,6 @@ node {
         throw e
     } finally {
         // Post-build action: Menampilkan laporan JUnit
-        junit 'test-reports/results.xml'
+        junit 'test-reports/resultss.xml'
     }
 }
